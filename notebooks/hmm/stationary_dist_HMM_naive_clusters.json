@@ -1,0 +1,32 @@
+{
+    "cluster_GC_ent_1_9": {
+        "mid_GC_mid_ent": 0.6666298483330307,
+        "low_GC_mid_ent": 0.12072118946895029,
+        "mid_GC_high_ent": 0.08263800992763155,
+        "high_GC_low_ent": 0.04741787018074576,
+        "mid_GC_low_ent": 0.03211683368842012,
+        "high_GC_mid_ent": 0.028738899560976888,
+        "low_GC_low_ent": 0.021737348840244686
+    },
+    "cluster_GC_ent_2_8": {
+        "mid_GC_mid_ent": 0.3309412071293198,
+        "mid_GC_high_ent": 0.17934225112441682,
+        "low_GC_mid_ent": 0.17905243993232411,
+        "high_GC_low_ent": 0.1010783125068535,
+        "high_GC_mid_ent": 0.09198264506874802,
+        "low_GC_low_ent": 0.0577892751212985,
+        "mid_GC_low_ent": 0.04293938160293825,
+        "low_GC_high_ent": 0.01687448751410099
+    },
+    "cluster_GC_ent_3_4": {
+        "high_GC_high_ent": 0.30914490160048763,
+        "high_GC_low_ent": 0.1896021355817378,
+        "low_GC_high_ent": 0.17830420497038624,
+        "mid_GC_high_ent": 0.10695950856403616,
+        "low_GC_low_ent": 0.09937806908853758,
+        "high_GC_mid_ent": 0.05773040722290467,
+        "low_GC_mid_ent": 0.03808646477848401,
+        "mid_GC_low_ent": 0.013346941910347654,
+        "mid_GC_mid_ent": 0.007447366283078231
+    }
+}

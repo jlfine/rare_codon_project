@@ -1,0 +1,194 @@
+input_files:
+  # k-mer data
+  kmers:
+    gene_master:
+      path: input_files/kmers/df_master_may_2026.csv
+      format: csv
+      description: Master gene dataframe with k-mer information
+
+  # RBP binding data
+  rbps:
+    eclip_binding:
+      path: input_files/rbps/ENCODE_eCLIP_binding_sites_good
+      format: bed
+      description: ENCODE eCLIP RBP binding sites
+
+    differential_expression:
+      path: input_files/rbps/RBP_differential_expression/master_df_rbp_world_may.csv
+
+  # expression
+
+  expression:
+    gtex:
+      path: input_files/expression/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct.gz
+      description: GTEx v8 expression
+    gtex_metadata:
+      path: input_files/expression/samples.tsv
+
+
+  # tandem repeat data
+  repeats:
+    disease_loci:
+      path: input_files/repeats/TR-Disease-Loci.csv
+      format: csv
+      description: Tandem repeat disease-associated loci
+
+    tr_regions:
+      path: input_files/repeats/adotto_TRregions_v1.2.1.bed
+      format: bed
+      description: All tandem repeat regions
+
+
+  # ribosome profiling data
+  riboseq:
+    ribo_coverage:
+      path: input_files/riboseq/Haas20_All.RiboCov.bw
+      format: bigwig
+      description: Ribosome coverage from Ribo-seq
+      datatype: coverage
+      
+    mrna_coverage:
+      path: input_files/riboseq/Haas20_All.mRNACov.bw
+      format: bigwig
+      description: mRNA coverage with RNA-seq
+      datatype: coverage
+
+  # sequence processing data
+  seq_process:
+    genome:
+      path: input_files/seq_process/GRCh38.primary_assembly.genome.fa.gz
+      format: fasta.gz
+      description: GRCh38 primary assembly genome
+      organism: Homo sapiens
+      reference: GRCh38
+      
+    annotation:
+      path: input_files/seq_process/gencode.v43.annotation.gtf.gz
+      format: gtf.gz
+      description: GENCODE v43 annotation
+      reference: GRCh38
+      version: v43
+      
+    longest_orfs:
+      path: input_files/seq_process/gencode_v43_longest_orfs_assembled_nov_29.csv
+      format: csv
+      description: Longest ORFs from GENCODE v43
+      
+    longest_orfs_expanded:
+      path: input_files/seq_process/gencode_v43_longest_orfs_assembled_nov_29_EXPANDED.csv
+      format: csv
+      description: Expanded longest ORFs; such that exons span multiple lines
+      
+    coordinates:
+      path: input_files/seq_process/hg_coords_names.csv
+      format: csv
+      description: Genomic coordinates and gene names for hg38
+    
+    background_gc:
+      path: input_files/seq_process/background_GC_and_length.csv
+
+
+
+ # AA starvation studies; RNA-seq count tables
+  aa_starvation:
+    hek_counts:
+      path: input_files/omics/AA_starvs/GSE153034_count_tbl_HEK.tsv
+      format: tsv
+      description: HEK cell count table from GEO accession GSE153034
+      organism: Homo sapiens
+      cell_type: HEK293
+    hela_counts:
+      path: input_files/omics/AA_starvs/GSE199252_count_tbl_HELA.tsv
+      format: tsv
+      description: HeLa cell count table from GEO accession GSE199252
+      organism: Homo sapiens
+      cell_type: HeLa
+
+  
+  # deseq2 results; HTT studies
+  deseq_htt:
+    ipsc_consortium:
+      deseq_results:
+        path: input_files/omics/DESeq_HTT/ipsc_consotrium/deseq2_results.csv
+        format: csv
+        description: DESeq2 differential expression results from iPSC consortium HTT study
+      normalized_counts:
+        path: input_files/omics/DESeq_HTT/ipsc_consotrium/normalized_counts.csv
+        format: csv
+        description: Normalized count matrix from iPSC consortium HTT study
+    plos_one_study:
+      path: input_files/omics/DESeq_HTT/plos_one_study_htt/pone.0143563.s001 (1).xlsx
+      format: xlsx
+      description: Supplementary data from PLOS ONE HTT study
+  
+  # RNA stability data
+  rna_stability:
+    mrna_stability:
+      path: input_files/omics/RNA_stab/mrna_stability_pcbi.csv
+      format: csv
+      description: mRNA stability metrics from PCBI study
+  
+  # ribosome profiling TPM data
+  riboprof:
+    rna_ribo_tpms:
+      path: input_files/omics/Riboprof/rna_ribo_all_tpms_cothani.xlsx
+      format: xlsx
+      description: RNA and ribosome profiling TPM values from Cothani et al.
+  
+  # gene ontology and functional annotation
+  go_annotation:
+    functional_associations:
+      path: input_files/omics/GO_info/func_associate_processed.csv
+      format: csv
+      description: Processed GO functional association data
+
+
+
+#  loading parameters
+loading_config:
+  # csv files
+  csv:
+    sep: ','
+    encoding: utf-8
+    index_col: null
+    low_memory: false
+  
+  # tsv files
+  tsv:
+    sep: '\t'
+    encoding: utf-8
+    index_col: null
+    low_memory: false
+  
+  # bed files
+  bed:
+    sep: '\t'
+    header: null
+    comment: '#'
+  
+  # fasta files
+  fasta:
+    format: fasta
+    alphabet: DNA
+  
+  # gtf files
+  gtf:
+    sep: '\t'
+    header: null
+    comment: '#'
+  
+  # bigwig files
+  bigwig:
+    format: pyBigWig
+    mode: read
+
+outputs:
+  files:    
+    output_kmers:
+      path: outputs/files/output_kmers/
+      description: contains bed and csv files of the kmers
+  figures:
+    path: outputs/figures/
+    categorical_plots:
+      path: outputs/figures/categorical_plots/
+      description: plots for group comparisons
