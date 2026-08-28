@@ -1,7 +1,7 @@
 # Scripts for rare codon patch project
 This repository contains the relevant code for the major analyses in our manuscript:
 
-Rare codon patches coordinate an RNA regulatory network and are impacted by repeat expansions linked to brain disorders
+'Rare codon patches coordinate an RNA regulatory network and are impacted by repeat expansions linked to brain disorders'
 
 Fine et al. (2026)
 
